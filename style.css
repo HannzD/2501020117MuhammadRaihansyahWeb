@@ -1,0 +1,269 @@
+/* ===== dasar buat semua ama backgorund =====*/
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  color: #fff;
+  background: #0b5cc0;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { display: block; max-width: 100%; }
+
+/* shadow buat belakang text nya */
+.lead, .big, .bar-text, .card, .sub, .stats {
+  text-shadow: 0 2px 8px rgba(0, 40, 120, 0.45);
+}
+
+/* ===== halaman buat tiap section = 1 layar ===== */
+.page {
+  min-height: 100vh;
+  padding: clamp(16px, 4vw, 56px);
+}
+
+/* Variasi buat gradasi background tiap halaman */
+.p1, .p3 {
+  background:
+    radial-gradient(circle at 0% 18%, #012a80 0%, transparent 45%),
+    linear-gradient(120deg, #0066c8 0%, #3aaef0 45%, #bfe3fb 80%, #d8edff 100%);
+}
+.p2, .p4 {
+  background:
+    radial-gradient(circle at 0% 95%, #012a80 0%, transparent 50%),
+    linear-gradient(100deg, #0a78d8 0%, #3db0f0 40%, #bfe4fb 80%, #d6ecfd 100%);
+}
+
+/* ===== Kartu kayak glass/kaca ===== */
+.frame {
+  min-height: calc(100vh - 2 * clamp(16px, 4vw, 56px));
+  display: flex;
+  flex-direction: column;
+  padding: clamp(20px, 4vw, 56px);
+  border-radius: clamp(32px, 5vw, 72px);
+  background: linear-gradient(135deg, rgba(255,255,255,0.26), rgba(255,255,255,0.14));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* ===== Header ama navigasi ===== */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.top-icon img,
+.top-icon svg { height: 48px; width: auto; }
+
+.nav {
+  display: flex;
+  gap: clamp(16px, 3vw, 44px);
+  padding: 14px clamp(20px, 3vw, 40px);
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nav a {
+  font-size: clamp(14px, 1.5vw, 21px);
+  font-weight: 300;
+  transition: opacity 0.2s;
+}
+.nav a:hover { opacity: 0.7; }
+
+/* ===== buat isi konten nya ===== */
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 5vw, 80px);
+}
+
+.big {
+  font-weight: 600;
+  line-height: 1.05;
+  font-size: clamp(48px, 7vw, 100px);
+}
+
+/* teks buat garis putih di kiri */
+.bar-text {
+  position: relative;
+  padding-left: 32px;
+  font-weight: 700;
+  font-size: clamp(15px, 1.5vw, 21px);
+  line-height: 1.4;
+}
+.bar-text::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 10px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.icon-row {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.icon-row img { height: 58px; width: auto; }
+
+/* ===== HOME ===== */
+.hero { justify-content: space-between; }
+.hero-logo { flex: 1; display: flex; justify-content: center; }
+.hero-logo img { width: min(100%, 430px); }
+
+.hero-text { flex: 1; }
+.hero-text h1 img { width: min(100%, 440px); }
+
+.lead {
+  margin: 28px 0 36px;
+  max-width: 440px;
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.btn {
+  display: inline-block;
+  width: min(100%, 300px);
+  padding: 14px 0;
+  text-align: center;
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 300;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.8);
+  background: rgba(120,195,255,0.75);
+  transition: transform 0.2s, background 0.2s;
+}
+.btn:hover { transform: translateY(-2px); background: rgba(120,195,255,0.95); }
+
+/* ===== PORTOFOLIO ===== */
+.about { justify-content: space-between; align-items: center; }
+.about-text { flex: 1.3; max-width: 680px; }
+.about-text .bar-text { margin: 28px 0 40px; }
+.about .name { font-size: 1.1em; font-weight: 800; }
+
+.photo-box { width: min(100%, 340px); flex-shrink: 0; margin-right: clamp(0px, 3vw, 40px); }
+.photo-top {
+  height: 30px;
+  border-radius: 15px;
+  background: linear-gradient(180deg, #3b86d6, #5aa3e8);
+  box-shadow: 0 4px 12px rgba(0, 60, 150, 0.25);
+}
+.photo {
+  width: 90.5%;
+  margin: 0 auto;
+  border-radius: 0 0 40px 40px;
+}
+.pill {
+  margin-top: 28px;
+  padding: 14px 0;
+  text-align: center;
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.8);
+  background: rgba(120,195,255,0.85);
+}
+
+/* ===== SKILLS ===== */
+.skills { align-items: flex-start; padding-top: 20px; gap: clamp(20px, 3vw, 40px); }
+.skills-title { flex: 0 0 24%; }
+.skills-title .big { font-size: clamp(52px, 7vw, 100px); }
+.skills-title .big span {
+  display: block;
+  font-size: 0.55em;
+  font-weight: 500;
+}
+.stats {
+  margin-top: 24px;
+  list-style: disc inside;
+  font-size: clamp(16px, 1.7vw, 24px);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.cards { flex: 1; display: flex; gap: clamp(14px, 2vw, 28px); }
+
+.card {
+  flex: 1;
+  min-height: 370px;
+  padding: 34px 22px 30px 26px;
+  border-radius: 90px 90px 80px 80px;
+  border: 1px solid rgba(255,255,255,0.5);
+  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.22));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.card img { height: 80px; width: auto; margin-bottom: 26px; margin-left: 6px; }
+.card h3 { font-size: clamp(15px, 1.4vw, 19px); font-weight: 800; margin-bottom: 4px; }
+.card ul { list-style: disc; padding-left: 24px; font-size: clamp(14px, 1.3vw, 18px); font-weight: 700; line-height: 1.3; }
+.card li { margin-bottom: 6px; }
+
+.tools {
+  align-self: flex-end;
+  width: min(100%, 900px);
+  margin: 40px 20px 20px 0;
+  padding: 22px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-radius: 60px;
+  background: rgba(120,195,255,0.9);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+.tools img { width: clamp(44px, 6.6vw, 96px); height: clamp(44px, 6.6vw, 96px); object-fit: contain; }
+
+/* ===== CONTACT ===== */
+.contact { justify-content: space-between; }
+.contact-text { flex: 1.2; }
+
+.contact-title {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-weight: 800;
+}
+.contact-title img { height: clamp(48px, 6vw, 82px); width: auto; }
+
+.sub {
+  margin: 8px 0 36px;
+  max-width: 620px;
+  font-size: clamp(13px, 1.2vw, 17px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.list { margin-bottom: 40px; }
+.list ul { list-style: disc; padding-left: 20px; font-size: clamp(15px, 1.6vw, 23px); font-weight: 600; line-height: 1.5; }
+
+.contact .icon-row img { height: 70px; }
+.contact .icon-row a { transition: transform 0.2s; }
+.contact .icon-row a:hover { transform: translateY(-3px); }
+
+.logo-card {
+  flex: 0 0 min(100%, 420px);
+  aspect-ratio: 420 / 412;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 36px;
+  border: 1px solid rgba(255,255,255,0.8);
+  background: rgba(115,195,255,0.95);
+}
+.logo-card img { width: 66%; }
+
+
+
+/* ===== penyesuaian buat gambar corel ===== */
+.tools img[alt="CorelDRAW"] { transform: scale(1.45); }
+.skills { padding-top: 36px; }
